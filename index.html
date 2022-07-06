@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contador Sanchez</title>
+    <title>Componentes Sanchez</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -13,6 +13,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script defer src="js/app.js"></script>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
     
 </head>
 <body>
@@ -33,34 +34,29 @@
         <div class="row">
 
             <div class="col-4 col-md-4 offset-4 text-center">
-                <h1>Contador</h1>
+                <h1 class="main-title">Cartelera</h1>
             </div>
 
         </div>    
         
-        <div class="row">
-                <div class="col-6 col-sm-6 col-md-4 offset-4">
-
-                    <div class="input-group">
-
-                        <div class="input-group-append">
-                            <button v-on:click="a -= 1" class="btn btn-outline-secondary" type="button">Bajar</button> <!-- Boton para descontar -->
-                        </div>
-
-                        <h1 class="p-2 bg-light text-dark col-4 text-center">{{ a }}</h1> <!-- Tag de muestra -->
-
-                        <div class="input-group-prepend">
-                            <button v-on:click="a += 1" class="btn btn-outline-secondary" type="button">Subir</button> <!-- Boton para sumar -->
-                        </div>
-
-                    </div>
-
-                </div>
-
+        <div class="col-4 col-md-4 offset-4 text-center">
+            <h2 class="main-title">Infantiles</h2>
+            <componente 
+                :peliculas="infantiles" 
+                :estilosnuevo="estiloInfantil"
+                >
+            </componente>
         </div>
 
+        <div class="col-4 col-md-4 offset-4 text-center">
+            <h2 class="main-title">Todo publico</h2>
+            <componente :peliculas="todoPublico" :estilosnuevo="estiloTodo"></componente>
         </div>
 
+        <div class="col-4 col-md-4 offset-4 text-center">
+            <h2 class="main-title">18+</h2>
+            <componente :peliculas="maYores" :estilosnuevo="estilo18"></componente>
+        </div>
     </div>
     
    <footer class="bg-light text-center text-lg-start footer">
@@ -71,10 +67,10 @@
         </div>
 
       </footer>
-      
+
       <style>
         .footer {
-            position: fixed;
+            position: sticky;
             bottom:0;
             width: 100%;
         }

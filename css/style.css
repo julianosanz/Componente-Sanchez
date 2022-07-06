@@ -1,0 +1,31 @@
+.card {
+
+    min-width: 220px;
+    
+    padding: 20px 10px;
+    
+    margin: 10px 10px;
+    
+    font-size: large;
+    
+    color:grey;
+    
+    border-color:palegreen;
+    
+    border-style: solid;
+    
+    border-width: 1px;
+    
+    max-width: 220px;
+    
+    background-color: whitesmoke !important;
+    
+    transition: 0.7s;
+    
+    }
+    
+    .card:hover {
+    
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+    
+    }
